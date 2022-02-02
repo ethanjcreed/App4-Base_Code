@@ -6,8 +6,8 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-Author 1
-Author 2
+Author 1 Timothy Reidel
+Author 2 Ethan Creed
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -33,26 +33,26 @@ blah, blah, blah, blah
 
 
 <script>
-//this are the functions to add the results to a cold or allergy running total. already exist, should not need to write my own
-        var allergy_count = 0;
-        var cold_count = 0;
+//this are the functions to add the results to either an athlete or nonathlete, they are the same as the cold/allergy add functions but adopted to fit the situation
+        var athlete_count = 0;
+        var not_count = 0;
 
 
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
-		alert(allergy_count);
+        function athleteAdd(){
+            athlete_count = athlete_count + 1;
+		alert(athlete_count);
 
         }
 
-        function coldAdd(){
-            cold_count = cold_count + 1;
+        function notAdd(){
+            not_count = not_count + 1;
         }
-//This function should get the results and find them as a percentage, determining which illness the user has.
+//This function should get the results and find them as a percentage, determining the likelihood of them being a Longhorn athlete.
 	function results(){
-            var allergy_percent = (allergy_count/4) *100;
-	    var cold_percent = (cold_count/4) *100;
+            var athlete_percent = (athlete_count/4) *100;
+	    var not_percent = (not_count/4) *100;
 	var resultText = document.getElementById("results");
-resultText.innerHTML = "Probability it is allergies =" + allergy_percent + "<br> Probability it is a cold =" + cold_percent; 
+resultText.innerHTML = "Probability they're an athlete =" + athlete_percent + "<br> Probability they're normal, just like us =" + not_percent; 
 
 
 	}
@@ -81,6 +81,14 @@ resultText.innerHTML = "Probability it is allergies =" + allergy_percent + "<br>
     left: 0vw;
     z-index: 1;
 }
+	
+//Image resizing code, this is so when I insert an image it will resize based on screen size. PUT IN IMAGES FOR A PAGE OR TWO
+img, object{
+    max-height:90%;
+    max-width:90%;
+}
+
+
 </style>
 
 <body>
